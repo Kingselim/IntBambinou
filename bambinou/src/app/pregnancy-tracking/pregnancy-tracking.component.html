@@ -1,0 +1,46 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100 bg-light">
+  <div class="bg-white rounded-4 shadow p-5" style="width: 100%; max-width: 600px;">
+    <h2 class="text-center fw-bold mb-3">Pregnancy Tracking</h2>
+    <div class="text-center mb-4">
+      <hr style="width: 100px; border: 2px solid #d946ef; border-radius: 10px; margin: 0 auto;">
+    </div>
+
+    <form [formGroup]="pregnancyForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Tracking Name:</label>
+        <input type="text" id="name" class="form-control rounded-pill px-4" formControlName="namePregnancyTracking" placeholder="Example: My first pregnancy">
+        <div class="text-danger mt-1" *ngIf="pregnancyForm.get('namePregnancyTracking')?.touched && pregnancyForm.get('namePregnancyTracking')?.invalid">
+          Tracking name is required.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="date" class="form-label">Start Date:</label>
+        <input type="date" id="date" class="form-control rounded-pill px-4" formControlName="datePregnancyTracking">
+        <div class="text-danger mt-1" *ngIf="pregnancyForm.get('datePregnancyTracking')?.touched && pregnancyForm.get('datePregnancyTracking')?.invalid">
+          Start date is required.
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label for="type" class="form-label">Tracking Type:</label>
+        <select id="type" class="form-control rounded-pill px-4" formControlName="intervalChoice">
+          <option value="">Select an option</option>
+          <option value="MONTH">Monthly</option>
+          <option value="SEMESTER">Quarterly</option>
+        </select>
+        <div class="text-danger mt-1" *ngIf="pregnancyForm.get('intervalChoice')?.touched && pregnancyForm.get('intervalChoice')?.invalid">
+          Please select a tracking type.
+        </div>
+      </div>
+
+      <button 
+        type="submit"
+        class="btn w-100 fw-bold rounded-pill"
+        style="background-color: #f33c9a; color: white;"
+        [disabled]="pregnancyForm.invalid">
+        Save Tracking
+      </button>
+    </form>
+  </div>
+</div>

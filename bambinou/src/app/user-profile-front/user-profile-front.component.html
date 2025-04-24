@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profil Utilisateur</title>
+</head>
+<body>
+  <div class="profile-page">
+    <!-- SECTION EN-TÊTE -->
+    <div class="profile-header">
+      <div class="profile-image">
+        <img src="http://localhost:8089/images/{{CurrentUser.image}}" alt="Photo de profil" />
+      </div>
+      <div class="profile-info">
+        <h1 class="name">{{CurrentUser.name}}</h1>
+        <p class="email">Email : {{CurrentUser.email}}</p>
+        <p class="role">Rôle : {{CurrentUser.roleTypes[0].role}}</p>
+        <p class="status active">Statut : Actif</p>
+        <div class="profile-actions">
+          <!-- <button class="btn">Modifier le profil</button> -->
+          <button class="btn secondary" (click)="logout()">Se déconnecter</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION STATS -->
+    <div class="profile-stats">
+      <div class="stat">
+        <span class="stat-number">245</span>
+        <span class="stat-label">Abonnés</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">132</span>
+        <span class="stat-label">Abonnements</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">56</span>
+        <span class="stat-label">Articles</span>
+      </div>
+    </div>
+
+    <!-- SECTION À PROPOS -->
+    <div class="profile-about">
+      <h2>À propos</h2>
+      <ul>
+        <li><strong>Âge :</strong> {{CurrentUser.age}}</li>
+        <li><strong>Pays :</strong> {{CurrentUser.country}}</li>
+        <li><strong>Téléphone :</strong> {{CurrentUser.phone}}</li>
+      </ul>
+    </div>
+
+    <!-- SECTION PARAMÈTRES RAPIDES -->
+    <div class="profile-settings">
+      <h2>Préférences rapides</h2>
+      <label><input type="checkbox" checked> Recevoir les notifications</label>
+      <label><input type="checkbox"> Mode sombre</label>
+      <label><input type="checkbox" checked> Afficher mon profil aux visiteurs</label>
+    </div>
+  </div>
+</body>
+</html>

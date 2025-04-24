@@ -1,0 +1,75 @@
+.custom-context-menu {
+    position: fixed;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #196af7;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 100px;
+    padding: 5px 0;
+    animation: fadeIn 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .menu-item {
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .menu-item:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Animation d'apparition douce */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+
+  .message {
+    max-width: 70%;
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    display: inline-block;
+    word-wrap: break-word;
+  }
+  
+  .sent {
+    background-color: #1687ff;
+    align-self: flex-end;
+    margin-left: auto;
+    text-align: right;
+    border-bottom-right-radius: 0;
+    color: white;
+  }
+  
+  .received {
+    background-color: #f1f0f0;
+    align-self: flex-start;
+    margin-right: auto;
+    text-align: left;
+    border-bottom-left-radius: 0;
+  }
+  
+  .chat-box {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  

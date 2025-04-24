@@ -1,0 +1,30 @@
+<div *ngIf="isOpen" class="chatbot-wrapper">
+    <div class="chatbot-header">
+      🤖 Chatbot Médical
+      <button class="close-btn" (click)="closeChat()">×</button>
+    </div>
+  
+    <div class="chatbot-body">
+      <div *ngFor="let msg of chatMessages" class="message" [ngClass]="msg.sender">
+        <div class="bubble">
+          <span>{{ msg.text }}</span>
+        </div>
+      </div>
+  
+      <div *ngIf="loading" class="message bot">
+        <div class="bubble loading">⏳ Chatbot réfléchit...</div>
+      </div>
+    </div>
+  
+    <div class="quick-actions">
+      <button (click)="askQuestion('Quels conseils de régime me recommandes-tu ?')">🥗 Régime</button>
+      <button (click)="askQuestion('Quels médecins puis-je consulter ?')">👩‍⚕️ Médecins</button>
+      <button (click)="askQuestion('Quels sont les symptômes dangereux ?')">❓ Questions</button>
+    </div>
+  
+    <div class="chatbot-footer">
+      <input type="text" [(ngModel)]="userQuestion" placeholder="Posez votre question..." />
+      <button (click)="askQuestion()">Envoyer</button>
+    </div>
+  </div>
+  

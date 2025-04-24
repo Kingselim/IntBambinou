@@ -1,0 +1,32 @@
+<div class="container-journal-section py-5">
+    <!-- ⬅️ Icone de retour -->
+    <div class="text-start mb-4 ms-3">
+      <a [routerLink]="['/monthly-tracking', idPregnancyTracking]" class="btn btn-back">
+        <i class="bi bi-arrow-left-circle-fill"></i>
+      </a>
+    </div>
+  
+    <!-- 📝 Journal Card -->
+    <div class="journal-box mx-auto p-4 shadow">
+      <h2 class="fw-bold text-center mb-3">Your personalized <span style="color: #f264b3;">pregnancy journal</span></h2>
+      <p class="text-center fs-5 text-secondary mb-4">
+        Capture precious moments, track your progress, and create memories that will last a lifetime with your online pregnancy journal.
+      </p>
+  
+      <div class="card p-4 shadow-sm" style="border-radius: 20px;">
+        <div class="d-flex align-items-center mb-3">
+          <span class="me-2" style="color: #f264b3;">❤️</span>
+          <h5 class="fw-bold mb-0">My Journal</h5>
+        </div>
+        <p class="mb-1 text-secondary">Today, I felt my baby move for the first time! It was like tiny butterflies fluttering...</p>
+        <div class="d-flex justify-content-between text-muted mt-2 small">
+          <div>Week 18</div>
+          <div>April 15, 2025</div>
+        </div>
+        <a [routerLink]="['/journal', idTracking]" class="btn btn-pink px-4 py-2 rounded-pill text-white fw-semibold" style="background-color: #f264b3;">
+            Start My Journal
+          </a>
+      </div>
+    </div>
+  </div>
+  

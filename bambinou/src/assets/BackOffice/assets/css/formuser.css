@@ -1,0 +1,33 @@
+/* Appliquer un alignement à gauche */
+.custom-form {
+    width: 100%; /* S'adapte à l'espace disponible */
+    max-width: 400px; /* Taille raisonnable pour un formulaire */
+    margin-left: 20px; /* Pousse le formulaire vers la gauche */
+    box-shadow: none; /* Supprime l'ombre si nécessaire */
+    background: transparent; /* Supprime le fond blanc */
+    padding: 20px;
+  }
+  
+  /* Espacement entre les champs */
+  .custom-form input {
+    margin-bottom: 10px;
+  }
+  
+  /* Bouton bien stylé */
+  .custom-btn {
+    background: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    width: 100%;
+  }
+  
+  .custom-btn:hover {
+    background: #0056b3;
+  }
+  
+  

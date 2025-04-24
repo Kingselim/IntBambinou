@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: #FDEFF3;
+    padding: 40px 20px;
+  }
+  
+  .profile-page {
+    max-width: 960px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(214, 51, 132, 1);
+
+
+    overflow: hidden;
+    padding: 30px;
+  }
+  
+  .profile-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .profile-image img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-info {
+    flex: 1;
+  }
+  
+  .name {
+    font-size: 2rem;
+    color: #2c3e50;
+  }
+  
+  .email, .role, .status {
+    margin: 6px 0;
+    color: #666;
+  }
+  
+  .status.active {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .bio {
+    margin: 10px 0;
+    font-style: italic;
+    color: #444;
+  }
+  
+  .profile-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .btn.secondary {
+    background-color: #e74c3c;
+  }
+  
+  .btn.secondary:hover {
+    background-color: #c0392b;
+  }
+  
+  .profile-stats {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f9fafc;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+  }
+  
+  .stat {
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #34495e;
+  }
+  
+  .stat-label {
+    color: #888;
+  }
+  
+  .profile-about, .profile-settings {
+    margin-bottom: 30px;
+  }
+  
+  .profile-about h2,
+  .profile-settings h2 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-size: 1.4rem;
+  }
+  
+  .profile-about ul {
+    list-style: none;
+  }
+  
+  .profile-about li {
+    margin: 8px 0;
+    color: #555;
+  }
+  
+  .profile-settings label {
+    display: block;
+    margin: 10px 0;
+    color: #555;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .profile-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .profile-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .btn {
+      width: 100%;
+    }
+  
+    .profile-stats {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+  

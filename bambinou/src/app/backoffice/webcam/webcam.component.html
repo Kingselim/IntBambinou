@@ -1,0 +1,15 @@
+<!-- webcam.component.html -->
+<!-- <img [src]="capturedImage" width="300" style="transform: scaleX(-1);" /> -->
+<webcam 
+  [trigger]="triggerObservable" 
+  (imageCapture)="handleImage($event)"
+  style="transform: scaleX(-1);">
+</webcam>
+<button *ngIf="id == null" (click)="takeSnapshot()">Prendre une photo</button> 
+<button *ngIf="id != null" (click)="makeUpload()">Upload une photo</button>
+ <!-- Message à afficher -->
+ <!-- <div *ngIf="message" [style.color]="messageColor" style="font-size: 18px;">
+    {{ message }}
+  </div> -->
+
+  

@@ -1,0 +1,98 @@
+<div class="journal-container">
+
+    <!-- ✅ Form (shown only if showForm = true) -->
+    <form *ngIf="showForm" [formGroup]="journalForm" (ngSubmit)="submitJournal()" class="journal-form">
+      <h2>📝 New Journal Entry</h2>
+  
+      <input formControlName="title" type="text" placeholder="A special moment today…" />
+      <input formControlName="mood" type="text" placeholder="Happy, excited, etc." />
+      <textarea formControlName="content" rows="5" placeholder="Describe your day, your thoughts, your emotions…"></textarea>
+      <input formControlName="date" type="date" />
+      <input type="file" (change)="onImageSelected($event)" multiple />
+  
+      <div>
+        <button type="button" class="btn-cancel" (click)="hideForm()">Cancel</button>
+        <button type="submit" class="btn-submit">
+          {{ editMode ? '💾 Update' : '❤️ Save' }}
+        </button>
+      </div>
+      <div class="text-center mt-4">
+        <button type="button" class="btn btn-outline-secondary rounded-pill" (click)="hideForm()">
+          ← Back to Journal
+        </button>
+      </div>
+      
+    
+    </form>
+    <div id="journal-section">
+    <!-- ✅ List of entries (shown only if showForm = false) -->
+    <div *ngIf="!showForm">
+        <div class="text-center mb-4" *ngIf="!showForm">
+            <input type="text"
+                   class="form-control w-50 mx-auto"
+                   [(ngModel)]="searchText"
+                   placeholder="🔍  Search by title, mood or content"
+                   style="border-radius: 30px; padding: 10px 20px;" />
+          </div>
+          
+      <h2 class="text-center mb-5" style="color:#d63384; font-size: 2rem;">📝 Latest Journal Entries</h2>
+  
+      <div class="journal-list">
+        <div *ngFor="let journal of paginatedJournals" class="journal-entry">
+          <h3>{{ journal.title }}</h3>
+          <p class="entry-date">📅 {{ journal.date | date:'MMMM d, yyyy' }}</p>
+          <p class="entry-mood"><strong>Mood:</strong> {{ journal.mood }}</p>
+          <p>{{ journal.content }}</p>
+  
+          <div *ngIf="journal.imageUrls">
+            <img *ngFor="let url of journal.imageUrls.split(',')" 
+                 [src]="'http://localhost:8089/uploads/' + url" 
+                 alt="Journal photo"
+                 class="rounded-xl w-full h-40 object-cover border border-gray-200 mt-2" />
+          </div>
+  
+          <div class="entry-actions">
+            <button (click)="editJournal(journal)">✏️ Edit</button>
+            <button class="btn btn-sm btn-outline-danger" (click)="deleteJournal(journal.id!)">🗑️ Delete</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- ✅ Button to open the form -->
+      <div class="text-center mt-5">
+        <button class="btn-new-entry" (click)="toggleForm()">📝 New Entry</button>
+      </div>
+    </div>
+  
+    <!-- Pagination -->
+    <div class="text-center mt-4" *ngIf="totalPages > 1">
+      <button class="btn btn-outline-secondary me-2"
+              (click)="currentPage = currentPage - 1"
+              [disabled]="currentPage === 1">
+        ← Previous
+      </button>
+  
+      <span class="mx-3">Page {{ currentPage }} of {{ totalPages }}</span>
+  
+      <button class="btn btn-outline-secondary ms-2"
+              (click)="currentPage = currentPage + 1"
+              [disabled]="currentPage === totalPages">
+        Next →
+      </button>
+    </div>
+  
+    <!-- Back to tracking -->
+    <div class="text-center mt-4">
+      <button class="btn btn-outline-secondary rounded-pill" [routerLink]="['/monthly-tracking', idPregnancyTracking]">
+        ← Back to Tracking
+      </button>
+    </div>
+  
+  
+    <button class="btn btn-primary" (click)="generatePdf()">
+        📄 Télécharger en PDF
+      </button>
+      
+      
+  </div>
+  

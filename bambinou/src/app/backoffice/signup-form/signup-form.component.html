@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive Login Form | CodingLab </title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="container" >
+        <form [formGroup]="Userform" class="custom-form" (ngSubmit)="save()">
+          <div class="title">Signup</div>
+      
+          <div class="input-box underline">
+            <input type="text" placeholder="Nom" formControlName="name" required>
+            <div class="underline"></div>
+          </div>
+          <div *ngIf="Userform.controls['name'].invalid && Userform.controls['name'].touched" class="alert alert-danger">
+            <p *ngIf="Userform.controls['name'].hasError('required')">Le nom est obligatoire</p>
+            <p *ngIf="Userform.controls['name'].hasError('minlength')">Le nom doit contenir au moins 3 caractères</p>
+          </div>
+      
+          <div class="input-box underline">
+            <input type="number" placeholder="Âge" formControlName="age" required>
+            <div class="underline"></div>
+          </div>
+          <div *ngIf="Userform.controls['age'].invalid && Userform.controls['age'].touched" class="alert alert-danger">
+            <p *ngIf="Userform.controls['age'].hasError('required')">L'âge est obligatoire</p>
+            <p *ngIf="Userform.controls['age'].hasError('min')">L'âge doit être supérieur à 0</p>
+          </div>
+      
+          <div class="input-box underline">
+            <input type="text" placeholder="Numéro de téléphone" formControlName="phone" required>
+            <div class="underline"></div>
+          </div>
+          <div *ngIf="Userform.controls['phone'].invalid && Userform.controls['phone'].touched" class="alert alert-danger">
+            <p *ngIf="Userform.controls['phone'].hasError('required')">Le numéro est obligatoire</p>
+            <p *ngIf="Userform.controls['phone'].hasError('minlength')">Le numéro doit contenir au moins 8 caractères</p>
+          </div>
+      
+          <label>Country</label>
+          <select class="form-control" formControlName="country">
+            <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+          </select>
+      
+          <div class="input-box underline">
+            <input type="email" placeholder="Email" formControlName="email" required>
+            <div class="underline"></div>
+          </div>
+          <div *ngIf="Userform.controls['email'].invalid && Userform.controls['email'].touched" class="alert alert-danger">
+            <p *ngIf="Userform.controls['email'].hasError('required')">L'email est obligatoire</p>
+            <p *ngIf="Userform.controls['email'].hasError('email')">Email invalide</p>
+          </div>
+      
+          <div class="input-box underline">
+            <input type="password" placeholder="Mot de passe" formControlName="password" required>
+            <div class="underline"></div>
+          </div>
+          <div *ngIf="Userform.controls['password'].invalid && Userform.controls['password'].touched" class="alert alert-danger">
+            <p *ngIf="Userform.controls['password'].hasError('required')">Le mot de passe est obligatoire</p>
+            <p *ngIf="Userform.controls['password'].hasError('minlength')">Le mot de passe doit contenir au moins 6 caractères</p>
+          </div>
+      
+          <label>Role</label>
+          <select class="form-control" formControlName="roleTypes">
+            <option *ngFor="let role of roles" [value]="role.id">{{ role.role }}</option>
+          </select>
+      
+          <div class="input-box button">
+            <input type="submit" value="Signup" [disabled]="Userform.invalid">
+          </div>
+        </form>
+      
+        <div class="option">Already have an account? <a [routerLink]="['/backoffice/login']">Login</a></div>
+      </div>
+      
+  </body>
+</html>

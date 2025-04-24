@@ -1,0 +1,75 @@
+<!-- <!DOCTYPE html> -->
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive Login Form | CodingLab </title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+     <!-- <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcPtxMrAAAAAEHditrHTp0TAnh7tOgXk2YO-kV_"></script> -->
+     <!-- reCAPTCHA site key: 6LcPtxMrAAAAAEHditrHTp0TAnh7tOgXk2YO-kV_ -->
+  <!-- Your code -->
+  </head>
+  <body style="background-image: url('../../../assets/BackOffice/assets/img/bgLogin.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+    <a [routerLink]="['/backoffice/webcam']"> <img src="../../../assets/img/faceID.png" alt="" style="position:absolute; top: 180px; left: 915px; width: 90px; color: aliceblue;"> </a>
+    <div class="container">
+      <form action="#"  [formGroup]="loginform">
+        <div class="title">Login</div>
+        <div class="input-box underline">
+          <input type="email" formControlName="email" placeholder="Enter Your Email" required>
+          <div class="underline"></div>
+        </div>
+        <div class="input-box">
+          <input type="password"  formControlName="password" placeholder="Enter Your Password" required>
+          <div class="underline"></div>
+        </div>
+        <div  *ngIf="errorMessage" class="option" style="color: red; padding: 5px;">{{ errorMessage }} </div>
+        <input type="checkbox" id="Remember" formControlName="remember" value="true" style=" margin-top: 20px;">
+        <label for="Remember"> Remember me</label><br>
+
+          <!-- reCAPTCHA ici -->
+        <!-- <div class="g-recaptcha" data-sitekey="6LehzhMrAAAAADxRyVo1MeCuU-V90P5TYYV2VDxj"></div> -->
+        <div id="recaptcha-container" ></div>
+
+        <div class="input-box button">
+          <input type="submit" name="" value="Submit" (click)="login()">
+        </div>
+
+        
+        
+      </form>
+        <!-- <div class="option">or Connect With Social Media</div>
+        <div class="google">
+          <a href="http://localhost:8089/oauth2/authorization/google" ><i class="fab fa-google fa-lg"></i>Sign in With Google</a>
+        </div> -->
+        <!-- <div class="facebook">
+          <a  [routerLink]="['/backoffice/webcam']"><i class="fab fa-facebook-f"></i>Sign in With Facebook</a>
+        </div> -->
+        <div class="option"> <a [routerLink]="['/backoffice/forgotpassword']">Forgot Password</a></div>
+        <div class="option">Don't have an account? <a [routerLink]="['/backoffice/signup']">Sign Up</a></div>
+        <div class="option">Back home click <a [routerLink]="['/home']">here</a></div>
+        <!-- <div class="option">Face ID<a [routerLink]="['/backoffice/webcam']">;)</a></div> -->
+        <!-- HTML : très bien -->
+
+
+
+
+           <!-- <div class="option">Recaptcha <a (click)="recaptcha()" style="cursor: pointer;">here</a></div> -->
+
+
+    </div>
+  </body>
+
+  <!-- <script>
+    function onClick(e) {
+      e.preventDefault();
+      grecaptcha.enterprise.ready(async () => {
+        const token = await grecaptcha.enterprise.execute('6LcPtxMrAAAAAEHditrHTp0TAnh7tOgXk2YO-kV_', {action: 'LOGIN'});
+      });
+    }
+  </script> -->
+</html>

@@ -1,0 +1,24 @@
+.container-journal-section {
+    background-color: #ffffff; /* fond blanc */
+    min-height: 100vh;
+  }
+  
+  .journal-box {
+    background-color: #fce4ec; /* cadre rose clair */
+    border-radius: 25px;
+    max-width: 850px;
+  }
+  
+  .btn-back {
+    font-size: 2.8rem;
+    color: #f264b3;
+    border: none;
+    background: transparent;
+    transition: transform 0.2s ease;
+  }
+  
+  .btn-back:hover {
+    transform: scale(1.1);
+    color: #d64a95;
+  }
+  

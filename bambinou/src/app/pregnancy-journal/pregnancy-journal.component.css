@@ -1,0 +1,176 @@
+/* --- Global layout --- */
+.journal-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+  }
+  
+  /* --- Formulaire journal --- */
+  .journal-form {
+    background-color: #fff0f5;
+    border: 1px solid #fbd3e7;
+    border-radius: 24px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  }
+  
+  .journal-form h2 {
+    font-size: 2rem;
+    color: #d63384;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .journal-form input,
+  .journal-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    background-color: #fff;
+    transition: border-color 0.2s;
+  }
+  
+  .journal-form input:focus,
+  .journal-form textarea:focus {
+    border-color: #f264b3;
+    outline: none;
+  }
+  
+  .journal-form input[type="file"] {
+    background-color: #fff;
+    padding: 0.8rem;
+  }
+  
+  /* --- Boutons du formulaire --- */
+  .journal-form .btn-submit,
+  .journal-form .btn-cancel {
+    padding: 0.8rem 1.5rem;
+    font-weight: 600;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+  }
+  
+  .journal-form .btn-submit {
+    background-color: #f264b3;
+    color: white;
+    margin-left: 1rem;
+  }
+  
+  .journal-form .btn-submit:hover {
+    background-color: #e057a5;
+  }
+  
+  .journal-form .btn-cancel {
+    background-color: white;
+    color: #555;
+    border: 1px solid #ccc;
+  }
+  
+  .journal-form .btn-cancel:hover {
+    background-color: #f8f9fa;
+  }
+  
+  /* --- Liste des entrées --- */
+  .journal-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .journal-entry {
+    background-color: white;
+    border: 1px solid #fcdde8;
+    border-radius: 24px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .journal-entry:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  }
+  
+  .journal-entry h3 {
+    font-size: 1.25rem;
+    color: #d63384;
+    margin-bottom: 0.5rem;
+  }
+  
+  .journal-entry .entry-date,
+  .journal-entry .entry-mood {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+  }
+  
+  .journal-entry p {
+    margin: 0.7rem 0;
+    color: #444;
+  }
+  
+  .journal-entry img {
+    border-radius: 16px;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border: 1px solid #eee;
+    margin-top: 1rem;
+  }
+  
+  .journal-entry .entry-actions {
+    text-align: right;
+    margin-top: 1rem;
+  }
+  
+  .journal-entry .entry-actions button {
+    background: none;
+    color: #d63384;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .journal-entry .entry-actions button:hover {
+    color: #b12c6b;
+  }
+  .btn-new-entry {
+    padding: 0.75rem 2rem;
+    border: 2px solid #f264b3;
+    border-radius: 999px;
+    color: #f264b3;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(242, 100, 179, 0.1);
+  }
+  
+  .btn-new-entry:hover {
+    background-color: #f264b3;
+    color: white;
+  }
+  .btn-pink {
+    background-color: #f78fb3;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    padding: 10px 24px;
+    box-shadow: 0 2px 6px rgba(247, 143, 179, 0.3);
+    transition: background-color 0.3s;
+  }
+  
+  .btn-pink:hover {
+    background-color: #f368a4;
+  }
+  

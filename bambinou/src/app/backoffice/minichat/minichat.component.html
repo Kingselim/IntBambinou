@@ -1,0 +1,30 @@
+<div class="chat-widget">
+    <!-- Icône du robot flottant -->
+    <div class="chat-toggle" (click)="toggleChat()">
+      <img src="../../../assets/BackOffice/assets/img/minichat.png" alt="Bot" class="robot-icon" />
+    </div>
+  
+    <!-- Fenêtre de chat -->
+    <div class="chat-container" *ngIf="showChat">
+      <div class="chat-header">
+        <span>Bambino Assistant 🤖</span>
+        <button class="close-btn" (click)="toggleChat()">×</button>
+      </div>
+  
+      <div class="chat-box">
+        <div class="messages" #messagesContainer>
+          <div *ngFor="let msg of messages" [ngClass]="msg.sender + '-message'">
+            <div class="bubble" [ngClass]="msg.sender + '-bubble'">
+              {{ msg.text }}
+            </div>
+          </div>
+        </div>
+  
+        <div class="input-area">
+          <input [(ngModel)]="userMessage" placeholder="Entrez votre message..." class="message-input"/>
+          <button (click)="sendMessage()" class="send-btn">➤</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

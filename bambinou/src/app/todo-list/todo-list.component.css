@@ -1,0 +1,58 @@
+/* Ajoutez ceci dans votre fichier CSS */
+.text-pink {
+    color: #e83e8c;
+  }
+  
+  .btn-pink {
+    background-color: #e83e8c;
+    color: white;
+    border: none;
+  }
+  
+  .btn-pink:hover {
+    background-color: #d2337d;
+    color: white;
+  }
+  
+  .bg-light-pink {
+    background-color: #fce4ec;
+  }
+  
+  .bg-light-warning {
+    background-color: #fff3cd;
+  }
+  
+  .bg-light-success {
+    background-color: #d1e7dd;
+  }
+  
+  .card {
+    border-radius: 12px;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .list-group-item {
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .list-group-item:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .form-check-input:checked {
+    background-color: #e83e8c;
+    border-color: #e83e8c;
+  }
+  
+  .rounded-circle {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

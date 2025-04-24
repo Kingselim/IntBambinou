@@ -1,0 +1,89 @@
+<div class="container py-5">
+  <h2 class="text-center fw-bold mb-4 text-pink">📝 Pregnancy To-Do List</h2>
+
+  <div class="row">
+    <!-- 📅 Left Column: Form & Calendar -->
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header bg-light-pink fw-bold">Add a Task</div>
+        <div class="card-body">
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Task name" [(ngModel)]="newTask.text">
+          </div>
+
+          <div class="mb-3">
+            <select class="form-select" [(ngModel)]="newTask.status">
+              <option value="todo">To Do</option>
+             
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label>Date</label>
+            <input type="date" class="form-control" [(ngModel)]="newTask.date">
+          </div>
+
+          <div class="mb-3">
+            <label>Time</label>
+            <input type="time" class="form-control" [(ngModel)]="newTask.time">
+          </div>
+
+          <button class="btn btn-pink w-100" (click)="addTask()">Add Task</button>
+        </div>
+      </div>
+
+      <!-- 📆 Simple Calendar -->
+      <div class="card shadow-sm">
+        <div class="card-header bg-light fw-bold">📅 Scheduled Tasks</div>
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let task of tasks" class="list-group-item small">
+            {{ task.date }} - {{ task.text }} <span *ngIf="task.time">🕒 {{ task.time }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 📋 Kanban Columns -->
+    <div class="col-md-8">
+      <div class="row text-center g-3">
+        <div class="col-md-4" *ngFor="let status of statuses">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-header bg-light text-center fw-bold">
+              {{ getTitle(status) }}
+            </div>
+            <ul class="list-group list-group-flush">
+              <li *ngFor="let task of getTasksByStatus(status); let i = index"
+                  class="list-group-item d-flex justify-content-between align-items-start">
+                <div>
+                  <div class="fw-bold">{{ task.text }}</div>
+                  <div class="text-muted small">
+                    {{ task.date }} <span *ngIf="task.time">• {{ task.time }}</span>
+                  </div>
+                </div>
+                <div class="d-flex flex-column align-items-end ms-3">
+                  <input type="checkbox" (change)="toggleStatus(i)" [checked]="task.status === 'done'">
+                  <button class="btn btn-sm btn-outline-danger mt-2"  *ngIf="task.id !== undefined" (click)="removeTask(i,task.id)">
+                   
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </li>
+              <li *ngIf="getTasksByStatus(status).length === 0"
+                  class="list-group-item text-muted text-center">
+                No tasks
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🔙 Return Button -->
+      <div class="text-center mt-4">
+        <button class="btn btn-outline-secondary rounded-pill"
+                [routerLink]="['/' + currentTrackingType + '-tracking', idPregnancyTracking]">
+          ← Back to Tracking
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

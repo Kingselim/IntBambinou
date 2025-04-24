@@ -1,0 +1,153 @@
+/* Conteneur du widget de chat */
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Icône du robot flottant */
+  .chat-toggle {
+    background-color: #d63384; /* Vert doux */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .chat-toggle:hover {
+    transform: scale(1.1);
+  }
+  
+  .robot-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  /* Fenêtre du chat */
+  .chat-container {
+    width: 350px;
+    height: 450px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.3s ease;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* En-tête du chat */
+  .chat-header {
+    background-color: #d63384; /* Le même vert que l'icône */
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Bouton de fermeture */
+  .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  /* Boîte de messages */
+  .chat-box {
+    flex-grow: 1;  /* Cette propriété permet d'étirer la boîte de messages */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 10px;
+    background: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .bubble {
+    padding: 10px 15px;
+    margin: 8px 0;
+    border-radius: 12px;
+    max-width: 80%;
+    word-wrap: break-word;
+    font-size: 14px;
+  }
+  
+  /* Style des messages de l'utilisateur */
+  .user-message .bubble {
+    background-color: #e0f7fa;
+    color: #d63384;
+    margin-left: auto;
+    border-radius: 15px 15px 0 15px;
+  }
+  
+  /* Style des messages du bot */
+  .bot-message .bubble {
+    background-color: #f1f1f1;
+    color: #333;
+    margin-right: auto;
+    border-radius: 15px 15px 15px 0;
+  }
+  
+  /* Zone d'entrée de message */
+  .input-area {
+    display: flex;
+    padding: 10px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    align-items: center;
+    position: sticky; /* Fixe la zone d'input en bas */
+    bottom: 0;
+  }
+  
+  .message-input {
+    flex-grow: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 14px;
+    outline: none;
+    background-color: #f4f4f4;
+  }
+  
+  .message-input:focus {
+    border-color: #d63384;
+  }
+  
+  .send-btn {
+    background-color: #d63384;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .send-btn:hover {
+    background-color: #d63384;
+  }
+  
