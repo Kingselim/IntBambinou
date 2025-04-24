@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Réinitialisation de votre mot de passe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            margin: auto;
+            border: 2px solid #007bff;
+        }
+        h2 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+            color: #333;
+            margin: 10px 0;
+        }
+        .code {
+            font-size: 26px;
+            font-weight: bold;
+            background: #007bff;
+            color: white;
+            padding: 12px 20px;
+            display: inline-block;
+            margin: 15px 0;
+            border-radius: 8px;
+            letter-spacing: 4px;
+            border: 2px solid #0056b3;
+        }
+        .footer {
+            font-size: 12px;
+            color: #666;
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Réinitialisation du mot de passe</h2>
+    <p>Bonjour,<span th:text="${name}"></span>!</p>
+    <p>Vous avez demandé à réinitialiser votre mot de passe. Utilisez le liens ci-dessous :</p>
+
+    <a  th:href="@{'http://localhost:4200/backoffice/restorepassword/' + ${id}}" class="btn">Réinitialiser mon mot de passe</a>
+    <p>Si vous n'êtes pas à l'origine de cette demande, ignorez cet email.</p>
+    <p class="footer">Merci,<br>L'équipe de support</p>
+</div>
+</body>
+</html>
