@@ -1,5 +1,6 @@
 package tn.esprit.bambinou.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,6 +24,7 @@ public class Post {
 
     @ManyToOne
     @JoinColumn(name = "nutrition_id")
+    @JsonBackReference
     private Nutrition nutrition;
 
     public Long getIdPost() {
@@ -72,6 +74,15 @@ public class Post {
     public void setRecipe(String recipe) {
         Recipe = recipe;
     }
+
+    public void setNutrition(Nutrition nutrition) {
+        this.nutrition = nutrition;
+    }
+
+    public Nutrition getNutrition() {
+        return this.nutrition;
+    }
+
 
 //    public Long getIdNutrition() {
 //        return IdNutrition;

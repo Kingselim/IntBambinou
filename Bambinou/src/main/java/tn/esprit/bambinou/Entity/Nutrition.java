@@ -1,5 +1,6 @@
 package tn.esprit.bambinou.Entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,7 +19,7 @@ public class Nutrition {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idNutrition;
     private String Recommendation;
-    private String Description;
+    private String description;
     private int NbFollowers;
     private float Calories;
     private float Protein;
@@ -31,6 +32,7 @@ public class Nutrition {
     private User user;
 
     @OneToMany(mappedBy = "nutrition", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Post> posts;
 
     public Long getIdNutrition() {
@@ -52,11 +54,11 @@ public class Nutrition {
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        this.description = description;
     }
 
     public int getNbFollowers() {

@@ -9,4 +9,7 @@ import java.util.List;
 public interface PostRepository extends JpaRepository<Post, Long> {
 
     //List<Post> findByIdNutrition(Long idNutrition);
+    List<Post> findByNutrition_IdNutrition(Long idNutrition);
+
+
 }
