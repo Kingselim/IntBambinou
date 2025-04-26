@@ -52,5 +52,7 @@ export class UserServiceService {
       return this.http.put<User>(this.URL + '/block-user/' + id,{});
   }
 
-
+  getAvailableUsersForNutrition(): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:8089/user/available-for-nutrition');
+  }
 }

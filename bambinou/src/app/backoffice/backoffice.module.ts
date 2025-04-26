@@ -22,6 +22,9 @@ import { FormsModule } from '@angular/forms';
 import { MinichatComponent } from './minichat/minichat.component';
 import { Forum2Component } from './forum2/forum2.component';
 import { PregnancyTracking2Component } from './pregnancy-tracking2/pregnancy-tracking2.component';
+import { AlimentationBComponent } from './alimentation-b/alimentation-b.component';
+import { PostBComponent } from './post-b/post-b.component';
+import { PostsBComponent } from './posts-b/posts-b.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { PregnancyTracking2Component } from './pregnancy-tracking2/pregnancy-tra
     WebcamComponent,
     MinichatComponent,
     Forum2Component,
-    PregnancyTracking2Component
+    PregnancyTracking2Component,
+    AlimentationBComponent,
+    PostBComponent,
+    PostsBComponent
     
    
     

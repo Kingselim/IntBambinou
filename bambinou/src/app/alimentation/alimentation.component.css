@@ -1,0 +1,252 @@
+/* src/app/[your-component]/[your-component].css */
+.container {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .card-header {
+    background-color: #E6E6FA; /* Lavender */
+    color: #5C6B73;
+    font-weight: 500;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .card-body {
+    background-color: #FFFFFF; /* White base for main card */
+  }
+  
+  .nutrition-card .card-body {
+    background-color: #D4F4E2; /* Mint green */
+  }
+  
+  .nutrition-card:nth-child(odd) .card-body {
+    background-color: #E6E6FA; /* Lavender for alternating cards */
+  }
+  
+  .nutrition-info {
+    color: #5C6B73;
+    margin-bottom: 10px;
+  }
+  
+  .nutrition-info label {
+    font-weight: 500;
+    margin-right: 5px;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .btn-primary {
+    background-color: #E0F7FA; /* Baby blue */
+    border-color: #E0F7FA;
+    color: #5C6B73;
+  }
+  
+  .btn-primary:hover {
+    background-color: #F9E4E8; /* Soft pink */
+    border-color: #F9E4E8;
+  }
+  
+  .error-message, .no-data {
+    background-color: #FFE4D6; /* Light peach */
+    color: #5C6B73;
+    border-color: #9DB4C0;
+  }
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .nutrition-card {
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s;
+  }
+  
+  .nutrition-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .nutrition-info {
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+  }
+  
+  .nutrition-info label {
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+  
+  .action-buttons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .error-message {
+    position: relative;
+    padding: 1rem;
+  }
+  
+  .no-data {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  /* Ensure filter inputs are aligned properly */
+  .input-group {
+    align-items: center;
+  }
+  
+  .input-group-text {
+    background-color: #f8f9fa;
+  }
+  
+  .form-label {
+    font-weight: 500;
+  }
+  
+  /* Adjust card header for better spacing */
+  .card-header {
+    padding: 1rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .nutrition-card {
+      margin-bottom: 1rem;
+    }
+  
+    .action-buttons {
+      flex-direction: column;
+    }
+  
+    .action-buttons .btn {
+      width: 100%;
+    }
+  }
+  /* Add these new styles to your existing CSS file */
+
+/* Nutrition Calculator Styles */
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.progress {
+  height: 20px;
+  border-radius: 4px;
+  overflow: visible;
+}
+
+.progress-bar {
+  position: relative;
+}
+
+.progress-bar::after {
+  content: attr(aria-valuenow);
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.bg-danger {
+  background-color: #dc3545 !important;
+}
+
+.bg-success {
+  background-color: #28a745 !important;
+}
+
+.bg-warning {
+  background-color: #ffc107 !important;
+}
+
+/* Nutrition Cards */
+.nutrition-card {
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+}
+
+.nutrition-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nutrition-info {
+  margin-bottom: 8px;
+}
+
+.nutrition-info label {
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+/* Action Buttons */
+.action-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Error messages */
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+/* Form validation */
+.ng-invalid.ng-touched:not(form) {
+  border-color: #dc3545;
+}
+
+.invalid-feedback {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: #dc3545;
+}
+.animate-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.animate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+input.form-control {
+  border-radius: 10px;
+}
+input::placeholder {
+  font-style: italic;
+  color: #bbb;
+}
+img[alt="IA"] {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+img[alt="IA"]:hover {
+  transform: scale(1.05);
+}

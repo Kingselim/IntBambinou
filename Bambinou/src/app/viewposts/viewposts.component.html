@@ -1,0 +1,18 @@
+<div *ngIf="isLoading">Loading posts...</div>
+<div *ngIf="error" class="error">{{ error }}</div>
+
+<div *ngIf="!isLoading && !error">
+  <h2>Posts for Nutrition ID: {{ nutritionId }}</h2>
+  
+  <div *ngIf="filteredPosts.length === 0">
+    No posts found for this nutrition plan.
+  </div>
+
+  <div *ngFor="let post of filteredPosts" class="post-card">
+    <h3>{{ post.recipe }}</h3>
+    <p>Type: {{ post.recipeType }}</p>
+    <p>Date: {{ post.date | date }}</p>
+    <p>Likes: {{ post.nblike }}</p>
+    <p>Comments: {{ post.nbcomment }}</p>
+  </div>
+</div>

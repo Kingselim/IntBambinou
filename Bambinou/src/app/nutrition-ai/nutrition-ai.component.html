@@ -1,0 +1,40 @@
+<div class="container mt-4">
+    <div class="card p-4 shadow" style="border-radius: 12px; border: none;">
+      <h3 class="fw-bold mb-4 text-center">
+        Formulaire Nutritionnel <span>🍽️</span>
+      </h3>
+  
+      <form [formGroup]="nutritionRecommendationForm" (ngSubmit)="getRecommendation()">
+        <div class="mb-3">
+          <label class="form-label fw-semibold text-secondary">Calories (kcal)</label>
+          <input type="number" class="form-control" placeholder="Entrez la quantité en kcal" formControlName="calories">
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-semibold text-secondary">Protéines (g)</label>
+          <input type="number" class="form-control" placeholder="Entrez la quantité en g" formControlName="protein">
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-semibold text-secondary">Glucides (g)</label>
+          <input type="number" class="form-control" placeholder="Entrez la quantité en g" formControlName="glucide">
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-semibold text-secondary">Lipides (g)</label>
+          <input type="number" class="form-control" placeholder="Entrez la quantité en g" formControlName="lipide">
+        </div>
+        <div class="mb-3">
+          <label class="form-label fw-semibold text-secondary">Vitamines (mg)</label>
+          <input type="number" class="form-control" placeholder="Entrez la quantité en mg" formControlName="vitamin">
+        </div>
+  
+        <button type="submit" class="btn w-100 fw-bold text-white" style="background-color: #d63384;">
+          ✨ Générer la recommandation IA
+        </button>
+      </form>
+  
+      <div *ngIf="recommendation" class="mt-4 alert alert-info">
+        <h5>🧠 Recommandation IA :</h5>
+        <p>{{ recommendation }}</p>
+      </div>
+    </div>
+  </div>
+  

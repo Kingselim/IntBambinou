@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e7e2b3a7-7b8f-4666-a8ba-228e2f83e049" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Controller/BabyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Controller/BabyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Controller/BabysittingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Controller/BabysittingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Cors/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Entity/Baby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Entity/Baby.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Entity/Babysitting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Entity/Babysitting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Repository/BabyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Repository/BabyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Repository/BabysittingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Repository/BabysittingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Service/BabyServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Service/BabysittingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Service/BabysittingServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Service/IBabysittingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Service/IBabysittingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/bambinou/Controller/BabyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/bambinou/Controller/BabyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/bambinou/Controller/BabysittingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/bambinou/Controller/BabysittingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/bambinou/Cors/CorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/bambinou/Entity/Baby.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/bambinou/Entity/Baby.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/bambinou/Entity/Babysitting.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/bambinou/Entity/Babysitting.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/bambinou/Repository/BabyRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/bambinou/Repository/BabyRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/bambinou/Repository/BabysittingRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/bambinou/Repository/BabysittingRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/bambinou/Service/BabyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/bambinou/Service/BabyServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/bambinou/Service/BabysittingServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/bambinou/Service/BabysittingServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tn/esprit/bambinou/Service/IBabysittingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tn/esprit/bambinou/Service/IBabysittingService.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2wC0ZoqNLwCeYlaZ44TZHhbqbOP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.BambinouApplication.executor": "Run",
+    "git-widget-placeholder": "Back",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/omark/OneDrive/Documents/GitHub/Bambino/Bambino-crud-syyos-association",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="BambinouApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="Bambinou" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="tn.esprit.bambinou.BambinouApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.153" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.153" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e7e2b3a7-7b8f-4666-a8ba-228e2f83e049" name="Changes" comment="" />
+      <created>1745530306926</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1745530306926</updated>
+      <workItem from="1745530308091" duration="136000" />
+      <workItem from="1745530556170" duration="4615000" />
+      <workItem from="1745597527144" duration="12023000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Entity/Nutrition.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tn/esprit/bambinou/Controller/AuthenticationController.java</url>
+          <line>169</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

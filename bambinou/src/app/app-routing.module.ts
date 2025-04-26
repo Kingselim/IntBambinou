@@ -16,6 +16,10 @@ import { SemesterTrackingComponent } from './semester-tracking/semester-tracking
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { PregnancyJournalComponent } from './pregnancy-journal/pregnancy-journal.component';
 import { PregnancyJournalSectionComponent } from './pregnancy-journal-section/pregnancy-journal-section.component';
+import { PostComponent } from './post/post.component';
+//import { FrontLayoutComponent } from './front-layout/front-layout.component';
+import { ViewpostsComponent } from './viewposts/viewposts.component';
+import { NutritionAiComponent } from './nutrition-ai/nutrition-ai.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full' }, // Redirection au chargement
@@ -33,7 +37,11 @@ const routes: Routes = [
   {path:'semester-tracking/:id', component : SemesterTrackingComponent},
   { path: 'todo-list/:id', component: TodoListComponent },
   {path:'journal/:id' ,component: PregnancyJournalComponent},
-  { path: 'journal-section/:id', component: PregnancyJournalSectionComponent }
+  { path: 'journal-section/:id', component: PregnancyJournalSectionComponent },
+  {path:'poste' ,component:PostComponent},
+  { path: 'viewposts/:nutritionId', component: ViewpostsComponent }  ,
+  { path: 'nutrition-ia', component: NutritionAiComponent }
+
 ];
 
 @NgModule({

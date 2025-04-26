@@ -1,0 +1,185 @@
+/* src/app/posts-b/posts-b.component.css */
+.alimentation-container {
+    max-width: 1200px;
+    margin-left: auto; /* Pushes container to right */
+    margin-right: 20px;
+    padding: 0 15px;
+  }
+  
+  /* Clearfix for the floated container */
+  .alimentation-container::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .card {
+    border-radius: 5px;
+  }
+  
+  .card-header {
+    color: white;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+  }
+  
+  .card-body {
+    padding: 15px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control,
+  .form-select {
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  
+  .form-actions {
+    margin-top: 20px;
+    text-align: right;
+  }
+  
+  .form-actions .btn {
+    margin-left: 10px;
+  }
+  
+  .table {
+    font-size: 0.9rem;
+  }
+  
+  .thead-dark th {
+    background-color: #343a40;
+    color: white;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f8f9fa;
+  }
+  
+  .error-message {
+    padding: 10px;
+    font-size: 0.9rem;
+    position: relative;
+  }
+  
+  .error-message .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .no-data {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  
+  .btn-sm {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
+  
+  .btn-warning i,
+  .btn-danger i {
+    font-size: 1rem;
+  }
+  
+  .btn-warning,
+  .btn-danger {
+    min-width: 40px;
+    text-align: center;
+  }
+  
+  .mr-2 {
+    margin-right: 8px;
+  }
+  .alimentation-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .error-message {
+    position: relative;
+    padding: 1rem;
+  }
+  
+  .no-data {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .table-responsive {
+    margin-top: 1rem;
+  }
+  
+  .btn-no-bg {
+    background: none;
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .btn-no-bg:hover {
+    background: #f8f9fa;
+    border-color: #999;
+    color: #000;
+  }
+  
+  .btn-no-bg:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-group {
+    align-items: center;
+  }
+  
+  .input-group-text {
+    background-color: #f8f9fa;
+  }
+  
+  .form-label {
+    font-weight: 500;
+  }
+  
+  .card-header {
+    padding: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .form-actions {
+      flex-direction: column;
+    }
+  
+    .form-actions .btn {
+      width: 100%;
+    }
+  
+    .table {
+      font-size: 0.9rem;
+    }
+  }
+
+  

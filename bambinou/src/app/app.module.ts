@@ -30,6 +30,20 @@ import { ChatbotMedicalComponent } from './chatbot-medical/chatbot-medical.compo
 import { NgChartsModule } from 'ng2-charts';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PostComponent } from './post/post.component';
+import { NutritionAiComponent } from './nutrition-ai/nutrition-ai.component';
+import { ViewpostsComponent } from './viewposts/viewposts.component';
+
+// Angular Material Modules
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +64,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PregnancyJournalSectionComponent,
     SemesterTrackingComponent,
     TodoListComponent,
-    ChatbotMedicalComponent
+    ChatbotMedicalComponent,
+    PostComponent,
+    NutritionAiComponent,
+    ViewpostsComponent
     
    
     
@@ -66,7 +83,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSnackBarModule,
     NgChartsModule,
     RouterModule,
-    BrowserAnimationsModule 
+    BrowserAnimationsModule,
+    
+    // Angular Material Modules
+    MatProgressSpinnerModule, // For <mat-spinner>
+    MatTableModule,          // For <mat-table>
+    MatIconModule,           // For <mat-icon>
+    MatButtonModule,         // For <button mat-button>
+    MatCardModule,           // For <mat-card>
+    MatToolbarModule,        // For <mat-toolbar>
+    MatInputModule,          // For <mat-input>
+    MatFormFieldModule,      // For <mat-form-field>
+    MatSnackBarModule        // For notifications
 
   ],
   providers: [

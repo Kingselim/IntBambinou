@@ -1,0 +1,47 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+  }
+  
+  .no-posts {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    border: 1px dashed #ddd;
+    border-radius: 5px;
+  }
+  
+  .card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .post-stats {
+    margin-top: 10px;
+    color: #666;
+  }
+  
+  .post-stats span {
+    margin-right: 15px;
+  }
+  
+  .badge {
+    font-size: 0.8rem;
+  }
+  
+  .alert {
+    margin-bottom: 20px;
+  }

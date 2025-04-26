@@ -32,12 +32,14 @@
               "src/assets/lib/animate/animate.min.css",
               "src/assets/lib/lightbox/css/lightbox.min.css",
               "src/assets/lib/owlcarousel/assets/owl.carousel.min.css",
+              "@angular/material/prebuilt-themes/pink-bluegrey.css"
 
              
             
 
             ],
             "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "node_modules/jquery/dist/jquery.min.js",
               "../bambinou/node_modules/jsvectormap/dist/jsvectormap.js",
               "../bambinou/node_modules/jsvectormap/dist/jsvectormap.min.js",

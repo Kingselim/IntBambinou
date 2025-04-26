@@ -18,6 +18,8 @@ import { WebcamComponent } from './webcam/webcam.component';
 import {MinichatComponent} from './minichat/minichat.component'
 import { Forum2Component } from './forum2/forum2.component';
 import { PregnancyTracking2Component } from './pregnancy-tracking2/pregnancy-tracking2.component';
+import { PostsBComponent } from './posts-b/posts-b.component';
+import { AlimentationBComponent } from './alimentation-b/alimentation-b.component';
 const routes: Routes = [
  // { path: 'dashboard', component: DashboardComponent },
 
@@ -38,6 +40,8 @@ const routes: Routes = [
     { path: 'minichat', component: MinichatComponent},
     {path: 'pregnancy-tracking2', component: PregnancyTracking2Component},
     {path:'forum2', component: Forum2Component},
+    {path: 'poste' ,component:PostsBComponent},
+    { path: 'alimentation', component: AlimentationBComponent }
     // { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
   ] 
 }

@@ -1,0 +1,106 @@
+<div class="container mt-4">
+    <!-- Error Message -->
+    <div *ngIf="error" class="error-message alert alert-danger">
+      {{ error }}
+      <button type="button" class="btn-close" (click)="error = null"></button>
+    </div>
+  
+    <!-- Header -->
+    <h3 class="mb-4 text-center text-primary">Liste des Posts</h3>
+  
+    <!-- Search and Controls -->
+    <div class="d-flex flex-wrap gap-2 align-items-center mb-4">
+      <div class="flex-grow-1">
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-search"></i></span>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="searchQuery"
+            (ngModelChange)="onSearchChange()"
+            placeholder="Rechercher un post..."
+          />
+        </div>
+      </div>
+  
+      <!-- Tri -->
+      <div class="input-group" style="max-width: 200px;">
+        <select
+          class="form-select"
+          [(ngModel)]="sortColumn"
+          (ngModelChange)="onSortChange($event)"
+        >
+          <option *ngFor="let column of displayedColumns" [value]="column">
+            {{ column === 'nblike' ? 'Likes' : column === 'nbcomment' ? 'Commentaires' : column === 'recipeType' ? 'Type' : (column | titlecase) }}
+          </option>
+        </select>
+        <button
+          class="btn btn-outline-secondary"
+          (click)="onSortChange(sortColumn)"
+          title="Inverser l'ordre"
+        >
+          <i class="bi" [ngClass]="sortDirection === 'asc' ? 'bi-arrow-down-up' : 'bi-arrow-up-down'"></i>
+        </button>
+      </div>
+  
+      <!-- Réinitialisation -->
+      <button class="btn btn-outline-secondary d-flex align-items-center" (click)="resetFilters()">
+        <i class="bi bi-arrow-clockwise me-1"></i> Réinitialiser
+      </button>
+    </div>
+  
+    <!-- Filters -->
+    <div class="row">
+      <div class="col-md-6 mb-3" *ngFor="let filter of ['nblike', 'nbcomment']">
+        <label class="form-label text-capitalize">{{ filter === 'nblike' ? 'Likes' : 'Commentaires' }}</label>
+        <div class="input-group">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Min"
+            [(ngModel)]="filters[filter].min"
+            (ngModelChange)="onFilterChange()"
+          />
+          <span class="input-group-text">-</span>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Max"
+            [(ngModel)]="filters[filter].max"
+            (ngModelChange)="onFilterChange()"
+          />
+        </div>
+      </div>
+    </div>
+  
+    <!-- Loading Spinner -->
+    <div *ngIf="loading" class="text-center my-4">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Chargement...</span>
+      </div>
+      <p>Chargement des posts...</p>
+    </div>
+  
+    <!-- No Data Message -->
+    <div *ngIf="!loading && filteredPosts.length === 0 && !error" class="alert alert-info">
+      Aucun post disponible avec les filtres actuels.
+    </div>
+  
+    <!-- Post Cards -->
+    <div class="row" *ngIf="filteredPosts.length > 0">
+      <div class="col-md-6 col-lg-4 mb-4" *ngFor="let post of filteredPosts">
+        <div class="card shadow-sm border-0 h-100 animate-card" style="border-radius: 20px; background-color: #ffe6ee;">
+          <div class="card-body" style="border-radius: 20px;">
+            <h5 class="card-title fw-bold text-danger">🍲 Post #{{ post.idPost }}</h5>
+            <p><span class="fw-semibold">📅 Date :</span> {{ post.date | date:'medium' }}</p>
+            <p><span class="fw-semibold">🍽️ Type :</span> {{ getRecipeTypeLabel(post.recipeType) }}</p>
+            <p><span class="fw-semibold">📝 Recette :</span><br> {{ post.recipe }}</p>
+            <hr>
+            <p><span class="fw-semibold">👍 Likes :</span> {{ post.nblike }}</p>
+            <p><span class="fw-semibold">💬 Commentaires :</span> {{ post.nbcomment }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
