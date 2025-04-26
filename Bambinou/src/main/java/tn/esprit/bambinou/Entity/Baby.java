@@ -37,6 +37,11 @@ public class Baby {
         this.idBaby = idBaby;
     }
 
+     @ManyToOne
+@JoinColumn(name = "user_id")
+private User user;
+
+
 
 
     public String getName() {
@@ -101,5 +106,13 @@ public class Baby {
 
     public void setEmergencyContact(String emergencyContact) {
         EmergencyContact = emergencyContact;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

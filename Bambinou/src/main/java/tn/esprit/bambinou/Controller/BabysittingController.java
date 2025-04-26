@@ -1,15 +1,19 @@
 package tn.esprit.bambinou.Controller;
 
+import com.itextpdf.text.DocumentException;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.bambinou.Entity.Babysitting;
 import tn.esprit.bambinou.Service.IBabysittingService;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @AllArgsConstructor
 @RequestMapping("/babysitting")
@@ -64,6 +68,38 @@ public class BabysittingController {
         babysitting.setIdBabysitting(id_babysitting); // Ensure the ID is set
         return babysittingService.modifyBabysitting(babysitting);
     }
+
+    @GetMapping("/parent/{id}")
+    public List<Babysitting> getContractsByParent(@PathVariable Long id) {
+        List<Babysitting> listbabysitting = babysittingService.retrieveAllBabysittings();
+        System.out.println(listbabysitting);
+        List<Babysitting> listdupatient= new ArrayList<>();
+        for (Babysitting babysitting : listbabysitting) {
+            System.out.println("user: " + babysitting.getUser());
+            if( babysitting.getUser()==null) {
+                System.out.println("user: " + babysitting.getUser());
+            }else {
+                if (babysitting.getUser().getId() == id) {
+                    listdupatient.add(babysitting);
+                }
+            }
+        }
+        return listdupatient;
+    }
+
+    //pdf complet info contrat plus bebe concerne ainsi que l'avis
+    @GetMapping("/pdf/{id}")
+    public ResponseEntity<byte[]> generateBabysittingPdf(@PathVariable Long id) throws IOException, DocumentException {
+        return babysittingService.generateContractSummaryPdf(id);
+    }
+
+    @GetMapping("/by-babysitter/{id}")
+    public ResponseEntity<List<Babysitting>> getByBabysitter(@PathVariable Long id) {
+        List<Babysitting> contracts = babysittingService.getByBabysitterId(id);
+        return ResponseEntity.ok(contracts);
+    }
+
+
 
     // http://localhost:8089/babysitting/user/{idUser}
 //    @GetMapping("/user/{idUser}")

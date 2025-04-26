@@ -37,8 +37,20 @@ public class BabyServiceImpl implements IBabyService {
 
     @Override
     public Baby modifyBaby(Baby baby) {
+        // 🔒 Sécurisation backend pour ne pas perdre le userPatient
+        Baby existing = babyRepository.findById(baby.getIdBaby()).orElse(null);
+        if (existing == null) {
+            throw new RuntimeException("Baby not found");
+        }
+
+        // Si userPatient est null dans la requête, on garde l'ancien
+        if (baby.getUser() == null) {
+            baby.setUser(existing.getUser());
+        }
+
         return babyRepository.save(baby);
     }
+
 
 
 }

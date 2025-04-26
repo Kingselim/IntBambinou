@@ -4,10 +4,11 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.bambinou.Entity.Baby;
+import tn.esprit.bambinou.Repository.BabyRepository;
 import tn.esprit.bambinou.Service.IBabyService;
 
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @AllArgsConstructor
 @RequestMapping("/baby")
@@ -15,6 +16,8 @@ public class BabyController {
 
     @Autowired
     private IBabyService babyService;
+    @Autowired
+    private BabyRepository babyRepository;
 
     /*
         --------------------- format ajout d'un Baby avec JSON -----------------------
@@ -52,6 +55,7 @@ public class BabyController {
     // http://localhost:8089/baby/add
     @PostMapping("/add")
     public Baby addBaby(@RequestBody Baby baby) {
+        System.out.println("==> Baby reçu : " + baby);
         return babyService.addBaby(baby);
     }
 
@@ -68,6 +72,10 @@ public class BabyController {
         return babyService.modifyBaby(baby);
     }
 
-    // http://localhost:8089/baby/user/{idUser}
+    @GetMapping("/by-parent/{id}")
+    public List<Baby> getBabiesByParent(@PathVariable Long id) {
+        return babyRepository.findByUser_Id(id);
+    }
+
 
 }

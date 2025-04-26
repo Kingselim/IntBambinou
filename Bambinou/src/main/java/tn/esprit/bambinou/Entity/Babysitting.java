@@ -1,38 +1,47 @@
 package tn.esprit.bambinou.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.util.Date;
 import java.util.List;
 
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Babysitting {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idBabysitting;
-    private Date StartDate;
-    private Date EndDate;
-    private Long Duration;
-    private Float Salary;
-    private String Status;
+
+    @Temporal(TemporalType.DATE)
+    private Date startDate;
+
+    @Temporal(TemporalType.DATE)
+    private Date endDate;
+
+    private Long duration;
+    private Float salary;
+    private String status;
 
     @ManyToOne
-    @JoinColumn (name = "user_idP")
-    private  User userPatient;
-    @ManyToOne
-    @JoinColumn (name = "user_idB")
-    private  User userBabySitter;
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    @OneToMany(mappedBy = "babysitting",cascade = CascadeType.ALL, orphanRemoval = true)
+
+    @ManyToOne
+    @JoinColumn(name = "babysitter_id")
+    private User babysitter;
+
+    @OneToMany(mappedBy = "babysitting", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Baby> babies;
+
+    @OneToMany(mappedBy = "babysitting", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private List<BabysittingReview> reviews;
+
+    // ====== GETTERS & SETTERS ======
+
     public Long getIdBabysitting() {
         return idBabysitting;
     }
@@ -41,61 +50,75 @@ public class Babysitting {
         this.idBabysitting = idBabysitting;
     }
 
-
-
     public Date getStartDate() {
-        return StartDate;
+        return startDate;
     }
 
     public void setStartDate(Date startDate) {
-        StartDate = startDate;
+        this.startDate = startDate;
     }
 
     public Date getEndDate() {
-        return EndDate;
+        return endDate;
     }
 
     public void setEndDate(Date endDate) {
-        EndDate = endDate;
+        this.endDate = endDate;
     }
 
     public Long getDuration() {
-        return Duration;
+        return duration;
     }
 
     public void setDuration(Long duration) {
-        Duration = duration;
+        this.duration = duration;
     }
 
     public Float getSalary() {
-        return Salary;
+        return salary;
     }
 
     public void setSalary(Float salary) {
-        Salary = salary;
+        this.salary = salary;
     }
 
     public String getStatus() {
-        return Status;
-    }
-
-    public User getUserPatient() {
-        return userPatient;
-    }
-
-    public void setUserPatient(User userPatient) {
-        this.userPatient = userPatient;
-    }
-
-    public User getUserBabySitter() {
-        return userBabySitter;
-    }
-
-    public void setUserBabySitter(User userBabySitter) {
-        this.userBabySitter = userBabySitter;
+        return status;
     }
 
     public void setStatus(String status) {
-        Status = status;
+        this.status = status;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public User getBabysitter() {
+        return babysitter;
+    }
+
+    public void setBabysitter(User babysitter) {
+        this.babysitter = babysitter;
+    }
+
+    public List<Baby> getBabies() {
+        return babies;
+    }
+
+    public void setBabies(List<Baby> babies) {
+        this.babies = babies;
+    }
+
+    public List<BabysittingReview> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<BabysittingReview> reviews) {
+        this.reviews = reviews;
     }
 }
